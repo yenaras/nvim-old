@@ -182,6 +182,11 @@ _G.packer_plugins = {
     path = "/home/brandon/.config/local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["shebang.nvim"] = {
+    loaded = true,
+    path = "/home/brandon/.config/local/share/nvim/site/pack/packer/start/shebang.nvim",
+    url = "https://github.com/samirettali/shebang.nvim"
+  },
   ["sqlite.lua"] = {
     loaded = true,
     path = "/home/brandon/.config/local/share/nvim/site/pack/packer/start/sqlite.lua",
@@ -201,6 +206,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/brandon/.config/local/share/nvim/site/pack/packer/start/txtfmt",
     url = "https://github.com/bpstahlman/txtfmt"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/brandon/.config/local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-markdown"] = {
     loaded = true,

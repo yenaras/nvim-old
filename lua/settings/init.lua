@@ -6,6 +6,7 @@ set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
+set.mouse = nvi
 
 set.hlsearch = true
 set.incsearch = true
