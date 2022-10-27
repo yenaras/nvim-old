@@ -6,7 +6,7 @@ set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
-set.mouse = nvi
+set.mouse = "a"
 
 set.hlsearch = true
 set.incsearch = true
@@ -28,4 +28,6 @@ set.cursorline = true
 set.hidden = true
 set.completeopt = "menuone,noselect"
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[let g:vruvbox_material_background = 'soft']])
+vim.cmd([[let g:vruvbox_material_better_performance = 1]])
+vim.cmd([[colorscheme gruvbox-material]])
