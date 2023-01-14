@@ -1,3 +1,6 @@
+#!/usr/bin/env lua
+require("mason").setup()
+require("mason-lspconfig").setup()
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         ---@diagnostic disable-next-line: undefined-global
@@ -27,25 +30,23 @@ local on_attach = function(client, bufnr)
 end
 
 ---@diagnostic disable-next-line: undefined-global
---local capabilities = vim.lsp.protocol.make_client_capabilities()
---capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
---
---require("lspconfig")["python-lsp-server"].setup({
---    on_attach = on_attach,
---    capabilities = capabilities
---})
---
---require("lspconfig")["lua-language-server"].setup({
---    on_attach = on_attach,
---    capabilities = capabilities
---})
---
---require("lspconfig")["rust-analyzer"].setup({
---    on_attach = on_attach,
---    capabilities = capabilities
---})
---
---require("lspconfig")["clangd"].setup({
---    on_attach = on_attach,
---    capabilities = capabilities
---})
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+
+require("mason-lspconfig").setup_handlers {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function(server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+    end,
+    -- Next, you can provide a dedicated handler for specific servers.
+    -- For example, a handler override for the `rust_analyzer`:
+    --    ["rust_analyzer"] = function ()
+    --        require("rust-tools").setup {}
+    --    end
+}

@@ -1,32 +1,42 @@
 return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
-	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
-	use("onsails/lspkind-nvim")
-	use("rcarriga/nvim-notify")
-	use("nvim-lualine/lualine.nvim")
-	use("romgrk/barbar.nvim")
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use("nvim-treesitter/nvim-treesitter-refactor")
-	use("christoomey/vim-tmux-navigator")
-	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-	use("williamboman/nvim-lsp-installer")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("preservim/vim-markdown")
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
-	use("bpstahlman/txtfmt")
-	use("tami5/sqlite.lua")
-	use("windwp/nvim-autopairs")
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
-	use("tanvirtin/monokai.nvim")
-	use("airblade/vim-gitgutter")
-	use("samirettali/shebang.nvim")
-	use("rhysd/vim-clang-format")
-	use("sainnhe/gruvbox-material")
+    use("wbthomason/packer.nvim")
+    use("kyazdani42/nvim-web-devicons")
+    use("kyazdani42/nvim-tree.lua")
+    use("hrsh7th/nvim-cmp") -- Autocompletion plugin
+    use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
+    use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
+    use("L3MON4D3/LuaSnip") -- Snippets plugin
+    use("onsails/lspkind-nvim")
+    use("rcarriga/nvim-notify")
+    use("nvim-lualine/lualine.nvim")
+    use("romgrk/barbar.nvim")
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/nvim-treesitter-refactor")
+    use("christoomey/vim-tmux-navigator")
+    use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
+    use("neovim/nvim-lspconfig")
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("preservim/vim-markdown")
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
+    use("bpstahlman/txtfmt")
+    use("tami5/sqlite.lua")
+    use("windwp/nvim-autopairs")
+    use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+    use("tanvirtin/monokai.nvim")
+    use("airblade/vim-gitgutter")
+    use("samirettali/shebang.nvim")
+    use("rhysd/vim-clang-format")
+    use("sainnhe/gruvbox-material")
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        requires = "nvim-treesitter/nvim-treesitter",
+        -- Uncomment next line if you want to follow only stable versions
+        -- tag = "*"
+    }
 end)

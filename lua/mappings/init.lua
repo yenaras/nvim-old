@@ -34,12 +34,16 @@ map("n", "<C-c>", ":BufferCloseAllButCurrent<CR>", opts)
 -- Magic buffer-picking mode
 map("n", "<C-p>", ":BufferPick<CR>", opts)
 -- Sort automatically by...
-map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
-map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
-map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
+map("n", "<leader>bb", ":BufferOrderByBufferNumber<CR>", opts)
+map("n", "<leader>bd", ":BufferOrderByDirectory<CR>", opts)
+map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
 -- Telescope mappings
-map("n", "<Leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<Leader>fg", ":Telescope live_grep<CR>", opts)
+map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+
 -- oscyank mappings
-map("v", "<Leader>c", ":OSCYank<CR>", opts)
-map("n", "<Leader>o", "<Plug>OSCYank", opts)
+map("v", "<leader>c", ":OSCYank<CR>", opts)
+map("n", "<leader>o", "<Plug>OSCYank", opts)
+
+-- generate docstrings
+map("n", "<leader>nf", ":lua require('neogen').generate()<CR>", opts)

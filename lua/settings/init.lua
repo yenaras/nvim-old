@@ -28,6 +28,11 @@ set.cursorline = true
 set.hidden = true
 set.completeopt = "menuone,noselect"
 
+set.foldcolumn = "3"
+set.foldlevel = 20
+set.foldmethod = "expr"
+set.foldexpr = "nvim_treesitter#foldexpr()"
+
 vim.cmd([[let g:vruvbox_material_background = 'soft']])
 vim.cmd([[let g:vruvbox_material_better_performance = 1]])
 vim.cmd([[colorscheme gruvbox-material]])
