@@ -20,7 +20,6 @@ return require("packer").startup(function(use)
     use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/null-ls.nvim")
     use("preservim/vim-markdown")
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
     use("bpstahlman/txtfmt")
     use("tami5/sqlite.lua")
     use("windwp/nvim-autopairs")
@@ -32,6 +31,10 @@ return require("packer").startup(function(use)
     use("sainnhe/gruvbox-material")
     use("lvimuser/lsp-inlayhints.nvim")
     use("simrat39/rust-tools.nvim")
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
     use {
         "danymat/neogen",
         config = function()
