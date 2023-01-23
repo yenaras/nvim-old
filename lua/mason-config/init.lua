@@ -1,6 +1,10 @@
 #!/usr/bin/env lua
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("lsp-inlayhints").setup()
+
+
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...)
         ---@diagnostic disable-next-line: undefined-global
@@ -29,6 +33,32 @@ local on_attach = function(client, bufnr)
     buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts) --> formats the current buffer
 end
 
+vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = "LspAttach_inlayhints",
+    callback = function(args)
+        if not (args.data and args.data.client_id) then
+            return
+        end
+
+        local bufnr = args.buf
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        require("lsp-inlayhints").on_attach(client, bufnr)
+    end,
+})
+
+local rt = require("rust-tools")
+
+rt.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+        end,
+    },
+})
 ---@diagnostic disable-next-line: undefined-global
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -46,7 +76,11 @@ require("mason-lspconfig").setup_handlers {
     end,
     -- Next, you can provide a dedicated handler for specific servers.
     -- For example, a handler override for the `rust_analyzer`:
-    --    ["rust_analyzer"] = function ()
-    --        require("rust-tools").setup {}
-    --    end
+    ["rust_analyzer"] = function()
+        require("rust-tools").setup {}
+        require("lspconfig")["rust_analyzer"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+    end
 }

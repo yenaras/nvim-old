@@ -30,6 +30,8 @@ return require("packer").startup(function(use)
     use("samirettali/shebang.nvim")
     use("rhysd/vim-clang-format")
     use("sainnhe/gruvbox-material")
+    use("lvimuser/lsp-inlayhints.nvim")
+    use("simrat39/rust-tools.nvim")
     use {
         "danymat/neogen",
         config = function()
