@@ -31,6 +31,7 @@ return require("packer").startup(function(use)
     use("sainnhe/gruvbox-material")
     use("lvimuser/lsp-inlayhints.nvim")
     use("simrat39/rust-tools.nvim")
+    use("iruzo/nvim-matrix")
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -41,7 +42,6 @@ return require("packer").startup(function(use)
             require('neogen').setup {}
         end,
         requires = "nvim-treesitter/nvim-treesitter",
-        -- Uncomment next line if you want to follow only stable versions
-        -- tag = "*"
+        tag = "*"
     }
 end)
