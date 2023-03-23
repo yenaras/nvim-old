@@ -32,6 +32,7 @@ return require("packer").startup(function(use)
     use("lvimuser/lsp-inlayhints.nvim")
     use("simrat39/rust-tools.nvim")
     use("iruzo/nvim-matrix")
+    use("chrisbra/csv.vim")
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,

@@ -34,18 +34,18 @@ set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- matrix theme settings
-vim.g.matrix_borders = true
-vim.g.matrix_disable_background = true
-vim.g.matrix_italic = false
-require('matrix').set()
-vim.cmd[[colorscheme matrix]]
+--vim.g.matrix_borders = true
+--vim.g.matrix_disable_background = true
+--vim.g.matrix_italic = false
+--require('matrix').set()
+--vim.cmd[[colorscheme matrix]]
 
 -- gruvbox theme settings
---vim.cmd([[let g:gruvbox_material_background = 'hard']])
---vim.cmd([[let g:gruvbox_material_better_performance = 1]])
---vim.cmd([[let g:gruvbox_material_diagnostic_text_highlight = 1]])
---vim.cmd([[let g:gruvbox_transparent_background = 2]])
---vim.cmd([[let g:gruvbox_material_dim_inactive_windows = 1]])
---vim.cmd([[let g:gruvbox_material_diagnostic_virtual_text = 'colored']])
---vim.cmd([[colorscheme gruvbox-material]])
---vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+vim.cmd([[let g:gruvbox_material_background = 'hard']])
+vim.cmd([[let g:gruvbox_material_better_performance = 1]])
+vim.cmd([[let g:gruvbox_material_diagnostic_text_highlight = 1]])
+vim.cmd([[let g:gruvbox_transparent_background = 1]])
+vim.cmd([[let g:gruvbox_material_dim_inactive_windows = 0]])
+vim.cmd([[let g:gruvbox_material_diagnostic_virtual_text = 'colored']])
+vim.cmd([[colorscheme gruvbox-material]])
+vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
