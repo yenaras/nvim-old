@@ -25,8 +25,8 @@ return require("packer").startup(function(use)
     use("windwp/nvim-autopairs")
     use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
     use("tanvirtin/monokai.nvim")
-    use("airblade/vim-gitgutter")
     use("samirettali/shebang.nvim")
+    use("airblade/vim-gitgutter")
     use("rhysd/vim-clang-format")
     use("sainnhe/gruvbox-material")
     use("lvimuser/lsp-inlayhints.nvim")
@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
     use("iruzo/nvim-matrix")
     use("windwp/nvim-ts-autotag")
     use("chrisbra/csv.vim")
+    use("andweeb/presence.nvim")
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
