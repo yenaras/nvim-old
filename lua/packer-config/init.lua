@@ -2,10 +2,10 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
     use("kyazdani42/nvim-web-devicons")
     use("kyazdani42/nvim-tree.lua")
-    use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-    use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
+    use("hrsh7th/nvim-cmp")         -- Autocompletion plugin
+    use("hrsh7th/cmp-nvim-lsp")     -- LSP source for nvim-cmp
     use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-    use("L3MON4D3/LuaSnip") -- Snippets plugin
+    use("L3MON4D3/LuaSnip")         -- Snippets plugin
     use("onsails/lspkind-nvim")
     use("rcarriga/nvim-notify")
     use("nvim-lualine/lualine.nvim")
@@ -47,4 +47,6 @@ return require("packer").startup(function(use)
         requires = "nvim-treesitter/nvim-treesitter",
         tag = "*"
     }
+    use("cdelledonne/vim-cmake")
+    use("antoinemadec/FixCursorHold.nvim")
 end)
