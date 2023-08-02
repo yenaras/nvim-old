@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    "wbthomason/packer.nvim",
     "kyazdani42/nvim-web-devicons",
     "kyazdani42/nvim-tree.lua",
     "hrsh7th/nvim-cmp",         -- Autocompletion plugin

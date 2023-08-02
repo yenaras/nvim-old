@@ -1,6 +1,6 @@
-require("settings")
 --require("packer-config")
 require("lazy-config")
+require("settings")
 require("nvim-tree-config")
 require("mappings")
 --require("lsp-config.language-servers")
