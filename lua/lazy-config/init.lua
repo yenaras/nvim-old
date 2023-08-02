@@ -56,4 +56,6 @@ local plugins = {
     "antoinemadec/FixCursorHold.nvim",
 }
 
+local opts = {}
+
 require("lazy").setup(plugins, opts)
