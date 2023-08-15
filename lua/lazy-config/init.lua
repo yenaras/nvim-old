@@ -53,6 +53,7 @@ local plugins = {
     },
     "cdelledonne/vim-cmake",
     "antoinemadec/FixCursorHold.nvim",
+    "NvChad/nvim-colorizer.lua",
 }
 
 local opts = {}

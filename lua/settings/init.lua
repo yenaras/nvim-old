@@ -33,6 +33,8 @@ set.foldlevel = 20
 set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
 
+require 'colorizer'.setup()
+
 -- matrix theme settings
 --vim.g.matrix_borders = true
 --vim.g.matrix_disable_background = true
