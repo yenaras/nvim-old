@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -22,10 +22,10 @@ local plugins = {
     "rcarriga/nvim-notify",
     "nvim-lualine/lualine.nvim",
     "romgrk/barbar.nvim",
-    { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter",          run = ":TSUpdate" },
     "nvim-treesitter/nvim-treesitter-refactor",
     "christoomey/vim-tmux-navigator",
-    { "nvim-telescope/telescope.nvim", dependencies = "nvim-lua/plenary.nvim"},
+    { "nvim-telescope/telescope.nvim",            dependencies = "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -35,7 +35,7 @@ local plugins = {
     "bpstahlman/txtfmt",
     "tami5/sqlite.lua",
     "windwp/nvim-autopairs",
-    { "tzachar/cmp-tabnine", build = "./install.sh", dependencies = "hrsh7th/nvim-cmp" },
+    --    { "tzachar/cmp-tabnine", build = "./install.sh", dependencies = "hrsh7th/nvim-cmp" },
     "tanvirtin/monokai.nvim",
     "samirettali/shebang.nvim",
     "airblade/vim-gitgutter",
@@ -46,7 +46,6 @@ local plugins = {
     "iruzo/nvim-matrix",
     "windwp/nvim-ts-autotag",
     "chrisbra/csv.vim",
-    "andweeb/presence.nvim",
     {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,

@@ -10,7 +10,7 @@ cmp.setup({
 	sorting = {
 		priority_weight = 2,
 		comparators = {
-			require("cmp_tabnine.compare"),
+--			require("cmp_tabnine.compare"),
 			compare.offset,
 			compare.exact,
 			compare.score,
@@ -59,7 +59,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "cmp_tabnine" },
+		--{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp_signature_help" },
 	},
 	formatting = {
