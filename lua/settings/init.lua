@@ -7,6 +7,7 @@ set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
 set.mouse = "a"
+set.clipboard = "unnamedplus"
 
 set.hlsearch = true
 set.incsearch = true

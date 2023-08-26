@@ -60,3 +60,11 @@ map("n", "<leader>nf", ":lua require('neogen').generate()<CR>", opts)
 -- cmake stuffs
 map ("n", "<leader>cg", ":CMakeGenerate<CR>", opts)
 map ("n", "<leader>cb", ":CMakeBuild<CR>", opts)
+
+-- dap mappings
+map ("n", "<leader>dc", ":DapContinue<CR>", opts)
+map ("n", "<leader>dsi", ":DapStepInto<CR>", opts)
+map ("n", "<leader>dsl", ":DapShowLog<CR>", opts)
+map ("n", "<leader>dso", ":DapStepOver<CR>", opts)
+map ("n", "<leader>dt", ":DapToggleBreakpoint<CR>", opts)
+map ("n", "<leader>dx", ":DapTerminate<CR>", opts)
