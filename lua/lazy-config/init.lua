@@ -46,6 +46,7 @@ local plugins = {
     "sainnhe/gruvbox-material",
     "lvimuser/lsp-inlayhints.nvim",
     "simrat39/rust-tools.nvim",
+    "simrat39/symbols-outline.nvim",
     "iruzo/nvim-matrix",
     "windwp/nvim-ts-autotag",
     "chrisbra/csv.vim",
